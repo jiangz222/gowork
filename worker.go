@@ -5,8 +5,6 @@ import (
 	"time"
 )
 
-// 2 background 程序，永不结束
-// 3 用户可以控制结束
 type WorkerConfig struct {
 	ConcurrencyNum int // max number of concurrency tasks
 	TimeOut        int // mills seconds
