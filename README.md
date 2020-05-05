@@ -7,7 +7,7 @@ goworker会按照既定策略进行并发运行。
 - [任务超时](#任务超时)
 - [主动退出](#主动退出)
 
-# <span id="并发队列控制">并发队列控制</span>
+## <span id="并发队列控制">并发队列控制</span>
 100个并发的请求，以10个的并发限制运行
 ```
 func main() {
@@ -24,7 +24,7 @@ func main() {
 }
 ```
 
-# <span id="任务超时">任务超时</span>
+## <span id="任务超时">任务超时</span>
 如下代码所示：设置2s超时，超时后会停止未开始的的worker请求
 ```
 func main() {
@@ -43,7 +43,7 @@ func main() {
 	worker.IsDone()
 }
 ```
-# <span id="主动退出">主动退出</span>
+## <span id="主动退出">主动退出</span>
 主动停止，未运行的worker会停止
 ```
 func main() {
