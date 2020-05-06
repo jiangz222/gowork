@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"sync"
 	"time"
 )
@@ -57,6 +58,7 @@ func (w *Worker) Add(f func()) {
 	}
 	w.mu.Unlock()
 	go func() {
+		w.wg.Add(1)
 		for {
 			select {
 			case w.tasks <- f:
@@ -77,7 +79,7 @@ func (w *Worker) Run() {
 					if !w.running {
 						return
 					}
-					w.wg.Add(1)
+					fmt.Println("add")
 					task()
 					w.wg.Done()
 
@@ -107,6 +109,9 @@ func (w *Worker) Exit() {
 }
 
 func (w *Worker) IsDone() bool {
+	fmt.Println("wait")
 	w.wg.Wait()
+	fmt.Println("wait done")
+
 	return true
 }

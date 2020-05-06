@@ -30,7 +30,6 @@ func TestWorker_ConcurrencyNum(t *testing.T) {
 			time.Sleep(1 * time.Second)
 			fmt.Println("done ", j)
 		})
-		fmt.Println("add ", i)
 	}
 	worker.IsDone()
 	end := time.Now().Unix()
@@ -38,6 +37,7 @@ func TestWorker_ConcurrencyNum(t *testing.T) {
 		fmt.Println(end - start)
 		t.Error("concurrency works not correctly")
 	}
+	time.Sleep(1 * time.Second)
 
 }
 
