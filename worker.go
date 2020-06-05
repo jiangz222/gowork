@@ -1,7 +1,6 @@
-package main
+package goworker
 
 import (
-	"fmt"
 	"sync"
 	"time"
 )
@@ -79,7 +78,6 @@ func (w *Worker) Run() {
 					if !w.running {
 						return
 					}
-					fmt.Println("add")
 					task()
 					w.wg.Done()
 
@@ -109,9 +107,7 @@ func (w *Worker) Exit() {
 }
 
 func (w *Worker) IsDone() bool {
-	fmt.Println("wait")
 	w.wg.Wait()
-	fmt.Println("wait done")
 
 	return true
 }
