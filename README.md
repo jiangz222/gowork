@@ -1,3 +1,8 @@
+[![GoDoc](https://godoc.org/github.com/jiangz222/goworker?status.svg)](https://godoc.org/github.com/jiangz222/goworker)
+[![Build Status](https://travis-ci.org/jiangz222/goworker.svg?branch=master)](https://travis-ci.org/jiangz222/goworker)
+[![Go Report Card](https://goreportcard.com/badge/github.com/jiangz222/goworker)](https://goreportcard.com/report/github.com/jiangz222/goworker)
+[![Coverage Status](https://coveralls.io/repos/github/jiangz222/goworker/badge.svg?branch=master)](https://coveralls.io/github/jiangz222/goworker?branch=master)
+
 # 简介
 goworker是使用GO语言实现的并发worker池，你只需要将并发运行的任务注册到goworker，
 goworker会按照既定策略进行并发运行。
